@@ -1,0 +1,195 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no" />
+
+    <title>
+        Intl and JS SDK Locale Testing
+    </title>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/next/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/next/"></script>
+    <script type="module" src=https://js.arcgis.com/calcite-components/1.2.0/calcite.esm.js></script>
+    <link rel="stylesheet" type="text/css" href=https://js.arcgis.com/calcite-components/1.2.0/calcite.css />
+
+        <!-- Stylesheet and JS scripts -->
+        <link rel="stylesheet" type="text/css" href="src/main.css" />
+        <script type="text/javascript" src="src/main.js"></script>
+</head>
+
+<body>
+    <calcite-shell>
+        <div id="mapDiv"></div>
+        <calcite-shell-panel slot="panel-end">
+            <calcite-panel heading="Testing Locales" description="Current locale: en" id="panel">
+                <calcite-block heading="Intl Percent Format" collapsible open id="calcite-block">
+                    <calcite-label id="percent-format-label">Percent format</calcite-label>
+                </calcite-block>
+                <calcite-block heading="Set Locale" collapsible id="calcite-block">
+                    <calcite-radio-button-group id="radio-group" name="Options" layout="vertical">
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="ar"></calcite-radio-button>
+                            Arabic: "ar"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="bg"></calcite-radio-button>
+                            Bulgarian: "bg"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="bs"></calcite-radio-button>
+                            Bosnian: "bs"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="ca"></calcite-radio-button>
+                            Catalan: "ca"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="cs"></calcite-radio-button>
+                            Czech: "cs"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="da"></calcite-radio-button>
+                            Danish: "da"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="de"></calcite-radio-button>
+                            German: "de"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="el"></calcite-radio-button>
+                            Greek: "el"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="en" checked></calcite-radio-button>
+                            Engish: "en"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="es"></calcite-radio-button>
+                            Spanish: "es"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="et"></calcite-radio-button>
+                            Estonian: "et"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="fi"></calcite-radio-button>
+                            Finnish: "fi"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="fr"></calcite-radio-button>
+                            French: "fr"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="he"></calcite-radio-button>
+                            Hebrew: "he"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="hr"></calcite-radio-button>
+                            Croatian: "hr"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="hu"></calcite-radio-button>
+                            Hungarian: "hu"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="id"></calcite-radio-button>
+                            Indonesian: "id"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="it"></calcite-radio-button>
+                            Italian: "it"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="ja"></calcite-radio-button>
+                            Japanese: "ja"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="ko"></calcite-radio-button>
+                            Korean: "ko"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="lt"></calcite-radio-button>
+                            Lithuanian: "lt"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="lv"></calcite-radio-button>
+                            Latvian: "lv"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="nb"></calcite-radio-button>
+                            Norwegian: "nb"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="nl"></calcite-radio-button>
+                            Dutch: "nl"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="pl"></calcite-radio-button>
+                            Polish: "pl"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="pt-BR"></calcite-radio-button>
+                            Portuguese (Brazil): "pt-BR"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="pt-PT"></calcite-radio-button>
+                            Portuguese (Portugal): "pt-PT"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="ro"></calcite-radio-button>
+                            Romanian: "ro"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="ru"></calcite-radio-button>
+                            Russian: "ru"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="sk"></calcite-radio-button>
+                            Slovak: "sk"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="sr"></calcite-radio-button>
+                            Serbian: "sr"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="sv"></calcite-radio-button>
+                            Swedish: "sv"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="th"></calcite-radio-button>
+                            Thai: "th"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="tr"></calcite-radio-button>
+                            Turkish: "tr"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="uk"></calcite-radio-button>
+                            Ukrainian: "uk"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="vi"></calcite-radio-button>
+                            Vietnamese: "vi"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="zh-CN"></calcite-radio-button>
+                            Chinese (China): "zh-CN"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="zh-HK"></calcite-radio-button>
+                            Chinese (Hong Kong): "zh-HK"
+                        </calcite-label>
+                        <calcite-label layout="inline">
+                            <calcite-radio-button value="zh-TW"></calcite-radio-button>
+                            Chinese (Taiwan): "zh-TW"
+                        </calcite-label>
+                    </calcite-radio-button-group>
+                </calcite-block>
+
+            </calcite-panel>
+        </calcite-shell-panel>
+    </calcite-shell>
+</body>
+
+</html>
